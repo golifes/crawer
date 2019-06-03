@@ -12,17 +12,17 @@ import (
 func ParseCityList(contents []byte) engine.ParseResult {
 	re := regexp.MustCompile(`<a href="(http://www.zhenai.com/zhenghun/[0-9a-z]+)"[^>]*>([^<]+)</a>`)
 	matches := re.FindAllSubmatch(contents, -1)
-	city := model.City{}
+	cityList := model.CityList{}
 	result := engine.ParseResult{}
 
 	itemList := engine.ItemList{}
 	itemList.Category = "CityList"
 	for _, m := range matches {
 
-		city.Title = string(m[2])
-		city.Url = string(m[1])
+		cityList.Name = string(m[2])
+		cityList.Url = string(m[1])
 
-		itemList.Items = append(itemList.Items, city)
+		itemList.Items = append(itemList.Items, cityList)
 		result.Items = itemList
 		//m2城市名字
 		//result.Items = append(result.Items.Items, "City "+string(m[2]))

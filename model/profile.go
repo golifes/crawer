@@ -8,7 +8,8 @@ type Profile struct {
 }
 
 type CityList struct {
-	Cities []*City
+	Name string
+	Url  string
 	///
 }
 
