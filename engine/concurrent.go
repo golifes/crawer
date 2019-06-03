@@ -1,7 +1,5 @@
 package engine
 
-import "fmt"
-
 type ConcurrentEngine struct {
 	Scheduler   Scheduler
 	WorkerCount int
@@ -33,11 +31,9 @@ func (e *ConcurrentEngine) Run(seeds ...Request) {
 	//itemCount := 0
 	for {
 		result := <-out
-		fmt.Println("empty item----->", result.Items.Items)
 		//if len(result.Items) == 0 {
 		//	continue
 		//}
-		fmt.Println(" hahah item----->", result.Items.Items)
 
 		//for _, item := range result.Items {
 		//
