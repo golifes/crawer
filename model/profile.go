@@ -8,10 +8,8 @@ type Profile struct {
 }
 
 type CityList struct {
-	Title string //标题
-	Url   string
-	Ctime time.Duration //创建时间
-	Ptime time.Duration //发布时间
+	Cities []*City
+	///
 }
 
 type City struct {

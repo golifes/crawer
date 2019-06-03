@@ -14,13 +14,13 @@ func ParseCity(contents []byte) engine.ParseResult {
 	matches := re.FindAllSubmatch(contents, -1)
 	//result := engine.ParseResult{}
 	result := engine.ParseResult{}
-	profile := model.Article{}
+	city := model.City{}
 	for _, m := range matches {
 		name := string(m[2])
-		profile.Content = name
+		// profile.Content = name
 		itemList := engine.ItemList{}
 		itemList.Category = "Article"
-		itemList.Items = []interface{}{profile}
+		itemList.Items = []interface{}{city}
 		result.Items = itemList
 		//m2城市名字
 		//result.Items = append(result.Items, " User "+string(m[2]))
